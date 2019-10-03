@@ -40,5 +40,29 @@
         {{ end -}}
       </div>
     </div>
+  {{- else if eq $name "series" -}}
+          <span class="archive-post-time">
+            * Date noted is most recent post
+          </span>
+    {{- $paginator := .Paginate .Data.Pages.ByDate.Reverse .Site.Params.archivePaginate -}}
+    <section id="archive" class="archive">
+    {{ if not $paginator.HasPrev -}}
+      <div class="archive-title category">
+        <h2 class="archive-name">{{ .Title }}</h2>
+      </div>
+    {{- end }}
+      {{ range $paginator.Pages -}}
+        <div class="archive-post">
+          <span class="archive-post-time">
+            {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
+          </span>
+          <span class="archive-post-title">
+            <a href="{{ .RelPermalink }}" class="archive-post-link">
+              {{ .Title }}
+            </a>
+          </span>
+        </div>
+      {{- end }}
+    </section>
   {{- end }}
 {{- end }}

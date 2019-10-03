@@ -4,7 +4,7 @@
   "description": "even source file",
   "main": "index.js",
   "scripts": {
-    "start": "hugo server --source=exampleSite --themesDir=../.. --disableFastRender",
+    "start": "hugo server",
     "build": "webpack",
     "watch": "webpack --watch --progress --colors"
   },
