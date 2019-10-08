@@ -53,7 +53,7 @@ copyright = ""            # default: author.name ↓
   debug = false
   since = "2017"
   gitRepo = ""
-  logoTitle = "NitroCodeBrew"
+  logoTitle = "Logs On Tap"
   keywords = ["developer", "devops","interview"]
   description = "Hugo theme even example site."
   archivePaginate = 5
@@ -80,9 +80,6 @@ copyright = ""            # default: author.name ↓
 
   livereUID = ""            # LiveRe UID 
 
-  baiduPush = false        # baidu push 
-  baiduAnalytics = ""      # Baidu Analytics
-  baiduVerification = ""   # Baidu Verification
   googleVerification = ""  # Google Verification 
 
   # Link custom CSS and JS assets

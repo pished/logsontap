@@ -28,8 +28,10 @@
   <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
 {{- end }}
 
-<!-- baidu & google verification  -->
-{{ with .Site.Params.baiduVerification }}<meta name="baidu-site-verification" content="{{.}}" />{{ end }}
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato|Muli:600|Permanent+Marker&display=swap" rel="stylesheet">
+
+<!--  google verification  -->
 {{ with .Site.Params.googleVerification }}<meta name="google-site-verification" content="{{.}}" />{{ end }}
 
 <!-- Site Generator -->

@@ -3,11 +3,7 @@
 // ==============================
 
 // ========== Theme Color ========== //
-// Config here to change theme color
-// Default | Mint Green | Cobalt Blue | Hot Pink | Dark Violet
 $theme-color-config: 'Brew';
-
-// Default theme color map
 $theme-color-map: (
   'Default': #c05b4d #f8f5ec,
   'Mint Green': #16982B #f5f5f5,
@@ -16,18 +12,11 @@ $theme-color-map: (
   'Dark Violet': #9932CC #f5f4fa,
   'Brew': #AE773F #f8f5ec,
 );
-
-// Check theme color config.
-// if it does not exist, use default theme color.
 @if not(map-has-key($theme-color-map, $theme-color-config)) {
   $theme-color-config: 'Default';
 }
 $theme-color-list: map-get($theme-color-map, $theme-color-config);
-
-// Default theme color of the site.
 $theme-color: nth($theme-color-list, 1) !default;
-
-// Deputy theme color of the site.
 $deputy-color: nth($theme-color-list, 2) !default;
 
 
@@ -40,31 +29,15 @@ $dark-gray: #8a8a8a !default;
 
 
 // ========== Global ========== //
-// Text color of the body.
 $global-font-color: #34495e !default;
-
-// Font size attribute applied to '<html>' and '<body>'.
 $global-font-size: 16px !default;
-
-// Global width of '<body>'.
 $global-body-width: 800px !default;
-
-// Padding of container main
 $global-container-padding: 0 20px !default;
-
-// Default line height for all type. `$global-lineheight` is 24px while `$global-font-size` is 16px.
 $global-lineheight: 1.5 !default;
-
-// Font family of the site.
 $global-font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif !default;
-
-// Serif font family of the site.
-$global-serif-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
-
-// Background color of the site.
+$global-serif-font-family: Lato, STHeiti, Microsoft Yahei, serif !default;
+$global-title-font: Muli;
 $global-background: $white !default;
-
-// Headings font size of the site.
 $global-headings: (
   h1: 26px,
   h2: 24px,
@@ -76,27 +49,12 @@ $global-headings: (
 
 
 // ========== Header ========== //
-// Padding of the site header.
 $header-padding: 20px 20px !default;
-
-// Font family: Chancery
-@font-face {
-  font-family: 'Chancery';
-  src: url('../fonts/chancery/apple-chancery-webfont.eot');
-  src: local('Apple Chancery'), url('../fonts/chancery/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/chancery/apple-chancery-webfont.woff2') format('woff2'),
-  url('../fonts/chancery/apple-chancery-webfont.woff') format('woff'),
-  url('../fonts/chancery/apple-chancery-webfont.ttf') format('truetype'),
-  url('../fonts/chancery/apple-chancery-webfont.svg#apple-chancery') format('svg');
-  font-weight: lighter;
-  font-style: normal;
-}
-
 // Font size of the logo.
 $logo-font-size: 48px !default;
 
 // Font family of the logo.
-$logo-font-family: 'Chancery', cursive, LiSu, sans-serif !default;
+$logo-font-family: 'BlackChancery','Permanent Marker', cursive, LiSu, sans-serif !default;
 
 // Margin of menu item.
 $menu-item-margin-left: 10px !default;
@@ -124,7 +82,7 @@ $post-border: 1px solid $light-gray !default;
 $post-title-font-size: 27px !default;
 
 // Font weight of post title.
-$post-title-font-weight: 400 !default;
+$post-title-font-weight: 600 !default;
 
 // Margin top of the post meta (post time).
 $post-meta-margin-top: 5px !default;
