@@ -2,7 +2,7 @@
 title: "Blog_init"
 date: 2019-10-31T17:10:02-04:00
 lastmod: 2019-10-31T17:10:02-04:00
-draft: true
+draft: false
 keywords: []
 description: ""
 tags: []
