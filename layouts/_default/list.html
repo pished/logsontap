@@ -1,0 +1,16 @@
+{{- define "main" -}}
+{{- $paginator := .Paginator -}}
+
+<section class="note-header">
+  <h1>{{- .Title -}}</h1>
+</section>
+
+{{- if .Content -}}
+  <div class="note-body markdown-parse">
+    {{- .Content -}}
+  </div>
+{{- end -}}
+
+{{- partial "note-list.html" $paginator -}}
+
+{{- end -}}

@@ -1,0 +1,18 @@
+{{- define "main" -}}
+  {{ $name := .Data.Plural -}}
+  {{ $terms := .Data.Terms.ByCount -}}
+  {{ $length := len $terms -}}
+    <div class="terms">
+      <h3 class="terms-title">
+        All Tags
+      </h3>
+      <div class="terms-tags">
+        {{- range $key, $value := $terms }}
+          <a class="terms-link" href="{{ $name | relLangURL }}/{{ $value.Term | urlize }}{{ if $.Site.Params.uglyURLs }}.html{{else}}/{{ end }}">
+            {{ $value.Term }}
+            <span class="terms-count">{{ len $value.Pages }}</span>
+          </a>
+        {{ end -}}
+      </div>
+    </div>
+{{- end }}

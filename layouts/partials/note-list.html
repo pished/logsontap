@@ -1,0 +1,36 @@
+<!-- $paginator must be imported -->
+{{- $paginator := . -}}
+
+{{- if gt $paginator.TotalPages 0 -}}
+<ul class="note-list">
+  {{- range $paginator.Pages -}}
+    <li class="note-item">
+      <a class="note" href="{{- .RelPermalink -}}">
+        <p class="note-title">{{- .Title | safeHTML -}}</p>
+        {{- if .Date -}}
+          <p class="note-date">{{- .Date.Format .Site.Params.dateFormat -}}</p>
+        {{- end -}}
+        {{- if .Summary -}}
+          <p class="note-summary">{{- .Summary | plainify | safeHTML -}}{{- if .Truncated -}}<span>&mldr;</span>{{- end -}}</p>
+        {{- end -}}
+      </a>
+      {{- if or .Params.notebooks .Params.tags .Params.series -}}
+        <div class="note-labels">
+          {{- range .Params.notebooks -}}
+            {{- $url := print "/notebooks/" (. | urlize) "/" -}}
+            <a class="note-notebooks" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
+          {{- end -}}
+          {{- range .Params.series -}}
+            {{- $url := print "/series/" (. | urlize) "/" -}}
+            <a class="note-series" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
+          {{- end -}}
+          {{- range .Params.tags -}}
+            {{- $url := print "/tags/" (. | urlize) "/" -}}
+            <a class="note-tag" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </li>
+  {{- end -}}
+</ul>
+{{- end -}}

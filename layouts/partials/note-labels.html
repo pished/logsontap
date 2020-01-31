@@ -1,0 +1,16 @@
+{{- if or .Params.categories .Params.tags -}}
+<div class="note-labels">
+    {{- range .Params.notebooks -}}
+    {{- $url := print "/notebooks/" (. | urlize) "/" -}}
+    <a class="note-notebooks" href={{- $url | relLangURL -}}><span class="hashtag">#</span>{{- . -}}</a>
+    {{- end -}}
+    {{- range .Params.series -}}
+    {{- $url := print "/series/" (. | urlize) "/" -}}
+    <a class="note-series" href={{- $url | relLangURL -}}><span class="hashtag">#</span>{{- . -}}</a>
+    {{- end -}}
+    {{- range .Params.tags -}}
+    {{- $url := print "/tags/" ( . | urlize) "/" -}}
+    <a class="note-tag" href={{- $url | relLangURL -}}><span class="hashtag">#</span>{{- . -}}</a>
+    {{- end -}}
+</div>
+{{- end -}}
