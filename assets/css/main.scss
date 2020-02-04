@@ -1,7 +1,6 @@
 @import 'vendors/normalize.scss';
 
-@import 'utils/variables.scss';
+@import 'variables.scss';
 
-@import 'layout/fontsize.scss';
-@import 'layout/base.scss';
-@import 'layout/markdown.scss';
+@import 'base.scss';
+@import 'markdown.scss';

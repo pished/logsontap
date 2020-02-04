@@ -4,6 +4,9 @@
 {{- $paginator := .Paginate .Data.Pages.ByLastmod.Reverse 10 }}
 <section id="archive" class="archive">
   {{- if and (not $paginator.HasPrev) false }}
+  <h2>
+    Last Updated
+  </h2>
     <div class="archive-title">
       <span class="archive-post-counter">
         {{ T "archiveCounter" (len .Data.Pages) }}
