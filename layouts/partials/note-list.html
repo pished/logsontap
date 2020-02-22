@@ -2,34 +2,36 @@
 {{- $paginator := . -}}
 
 {{- if gt $paginator.TotalPages 0 -}}
-<ul class="note-list">
+<ul>
   {{- range $paginator.Pages -}}
-    <li class="note-item">
-      <a class="note" href="{{- .RelPermalink -}}">
-        <p class="note-title">{{- .Title | safeHTML -}}</p>
+    <li class="max-w-sm w-full lg:max-w-full lg:flex">
+      <div class="p-4 flex flex-col justify-between leading-normal w-full">
+      <a class="hover:opacity-50" href="{{- .RelPermalink -}}">
+        <p class="font-bold text-xl mb-2">{{- .Title | safeHTML -}}</p>
         {{- if .Date -}}
-          <p class="note-date">{{- .Date.Format .Site.Params.dateFormat -}}</p>
+          <p class="text-sm text-gray-600 mb-2">{{- .Date.Format .Site.Params.dateFormat -}}</p>
         {{- end -}}
         {{- if .Summary -}}
-          <p class="note-summary">{{- .Summary | plainify | safeHTML -}}{{- if .Truncated -}}<span>&mldr;</span>{{- end -}}</p>
+          <p class="leading-relaxed text-gray-700">{{- .Summary | plainify | safeHTML -}}{{- if .Truncated -}}<span>&mldr;</span>{{- end -}}</p>
         {{- end -}}
       </a>
       {{- if or .Params.notebooks .Params.tags .Params.series -}}
-        <div class="note-labels">
+        <div class="note-labels mt-2">
           {{- range .Params.notebooks -}}
             {{- $url := print "/notebooks/" (. | urlize) "/" -}}
-            <a class="note-notebooks" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
+            <a class="note-notebooks text-blue mr-3 hover:opacity-50" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
           {{- end -}}
           {{- range .Params.series -}}
             {{- $url := print "/series/" (. | urlize) "/" -}}
-            <a class="note-series" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
+            <a class="note-series mr-3 text-green hover:opacity-50" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
           {{- end -}}
           {{- range .Params.tags -}}
             {{- $url := print "/tags/" (. | urlize) "/" -}}
-            <a class="note-tag" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
+            <a class="note-tag mr-3 text-red hover:opacity-50" href="{{- $url | relURL -}}"><span class="hashtag">#<span>{{- . -}}</a>
           {{- end -}}
         </div>
       {{- end -}}
+      </div>
     </li>
   {{- end -}}
 </ul>

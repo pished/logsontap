@@ -1,0 +1,134 @@
+.markdown-parse p{
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.markdown-parse pre{
+  display: block;
+  overflow: auto;
+  padding: 12px 10px;
+  margin: 8px 0;
+  word-wrap: normal;
+  white-space: pre;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  tab-size: 4;
+}
+
+.markdown-parse h1, .markdown-parse h2 {
+  padding-bottom: .3em;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-parse h1, .markdown-parse h2,
+.markdown-parse h3, .markdown-parse h4,
+.markdown-parse h5, .markdown-parse h6 {
+  color: #303033;
+  margin-top: 2.4px;
+  margin-bottom: 20px;
+}
+
+.markdown-parse h1 {
+  font-size: 2.25rem;
+}
+
+.markdown-parse h2 {
+  font-size: 1.875rem;
+}
+
+.markdown-parse h3 {
+  font-size: 1.5rem;
+}
+
+.markdown-parse h4 {
+  font-size: 1.25rem;
+}
+
+.markdown-parse h5 {
+  font-size: 1.125rem;
+}
+
+.markdown-parse h6 {
+  font-size: 1rem;
+}
+
+.markdown-parse blockquote {
+  position: relative;
+  font-style: italic;
+  font-size: 1.8rem;
+  line-height: 1.4rem;
+}
+
+.markdown-parse blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: 1.8rem;
+  left: -1.4rem;
+  color: darken(#eee, 7%);
+  font-size: 6em;
+  z-index: -1;
+}
+
+pre>code {
+  font-size: 1rem;
+  color: #d14;
+  font-family: 'Fira Code',Menlo,Consolas,liberation mono,monospace;
+  font-weight: 500;
+  color: inherit;
+  background-color: inherit;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+code, kbd, samp {
+  font-family: 'Fira Code',Menlo,Consolas,liberation mono,monospace;
+  font-weight: 500;
+  display: inline;
+  font-size: 1rem;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: #d14;
+  background-color: rgba(221,17,68,0.05);
+}
+
+mark {
+  background-color: rgba(12,242,143,.2);
+  color: currentColor;
+}
+
+.markdown-parse hr {
+  border-top: 1px dashed #eee;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.markdown-parse ol, .markdown-parse ul {
+  font-size: 1rem;
+}
+
+.markdown-parse table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.markdown-parse th {
+  color: #303033;
+  font-weight: 600;
+}
+
+.markdown-parse tr {
+  border: 0;
+}
+
+.markdown-parse th, .markdown-parse td {
+  min-width: 120px;
+  padding: 6px 13px;
+  border: 1px solid #eee;
+}
