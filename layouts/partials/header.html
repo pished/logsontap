@@ -1,24 +1,34 @@
-<header id="header" class="header">
-  <div class="logo-wrapper">
-    <a href="/" class="logo">Logs On Tap</a>
-  </div>
-  <nav class="navbar-wrapper">
-    <ul id="navbar" class="navbar">
-      <li class="nav-item">
-        <a href="/" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{- `/notebooks/` | relLangURL -}}" class="nav-link">Notebooks</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{- `/series/` | relLangURL -}}" class="nav-link">Series</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{- `/tags/` | relLangURL -}}" class="nav-link">Tags</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{- `/about/` | relLangURL -}}" class="nav-link">About</a>
-      </li>
-    </ul>
+<header id="header">
+  <nav class="flex items-center justfiy-between flex-wrap p-6">
+    <div class="flex items-center flex-shrink-0 md:mr-6 md:ml-0 mx-auto">
+      <a class="inline-block" href="/">
+        <!-- <svg class="fill-current inline-block mb-3 h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg> -->
+        <svg class="fill-current inline-block h-8 w-8 mr-2" xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'><title>ionicons-v5-g</title><path d='M352,200V440a40.12,40.12,0,0,1-40,40H136a40.12,40.12,0,0,1-40-40V224' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path d='M352,224h40a56.16,56.16,0,0,1,56,56v80a56.16,56.16,0,0,1-56,56H352' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/><line x1='224' y1='256' x2='224' y2='416' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><line x1='288' y1='256' x2='288' y2='416' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><line x1='160' y1='256' x2='160' y2='416' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path d='M320,112a48,48,0,0,1,0,96c-13.25,0-29.31-7.31-38-16H160c-8,22-27,32-48,32a48,48,0,0,1,0-96,47.91,47.91,0,0,1,26,9' style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/><path d='M91.86,132.43a40,40,0,1,1,60.46-52S160,91,160,96' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/><path d='M145.83,64.71C163.22,44.89,187.57,32,216,32c52.38,0,94,42.84,94,95.21A95,95,0,0,1,308.33,145' style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/></svg>
+        <span class="text-semibold text-2xl md:text-5xl md:text-normal">Logs On Tap</span>
+      </a>
+    </div>
+
+    <!-- <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div> -->
+
+    <div class="block flex-grow lg:flex lg:items-center w-auto">
+      <div class="text-lg lg:flex-grow text-center text-red">
+        <a href="{{- `/about/` | relLangURL -}}" class="inline-block mt-4 lg:inline-block hover:opacity-50 lg:mt-0 mr-4 mr-0 md:float-right">
+          About
+        </a>
+        <a href="{{- `/series/` | relLangURL -}}" class="inline-block mt-4 lg:inline-block hover:opacity-50 lg:mt-0 mr-4 md:float-right">
+          Series
+        </a>
+        <a href="{{- `/tags/` | relLangURL -}}" class="inline-block mt-4 lg:inline-block hover:opacity-50 lg:mt-0 mr-4 md:float-right">
+          Tags
+        </a>
+        <a href="{{- `/notebooks/` | relLangURL -}}" class="inline-block mt-4 lg:inline-block hover:opacity-50 lg:mt-0 mr-0 md:mr-4 md:float-right">
+          Notebooks
+        </a>
+      </div>
+    </div>
   </nav>
 </header>

@@ -10,7 +10,10 @@
 
 <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre:400,400i,700,700i|Fira+Code&display=swap" rel="stylesheet">
 
-{{- $options := (dict "targetPath" "style.css" "outputStyle" "compressed") -}}
-{{- $style := resources.Get "css/main.scss" | resources.ToCSS $options | resources.Fingerprint "sha256" -}}
-
-<link rel="stylesheet" href="{{- $style.RelPermalink -}}" integrity="{{- $style.Data.Integrity -}}">
+{{ if .Site.IsServer }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/dev/postcss.config.js") }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ else }}
+    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ end }}

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-full" lang="en">
   {{- partial "head.html" . -}}
-  <body>
-    <div class="page-container max-width">
+  <body class="bg-gray-100">
+    <div class="container flex flex-col mx-auto h-full min-h-screen bg-white shadow rounded-sm p-6">
       {{- partial "header.html" . -}}
-      <main id="main" class="main">
+      <main id="main" class="flex-grow">
         {{- block "main" . -}}{{end}}
       </main>
       {{- partial "footer.html" . -}}
-    </div>
   </body>
 </html>
