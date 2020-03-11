@@ -2,7 +2,7 @@
 <html class="h-full" lang="en">
   {{- partial "head.html" . -}}
   <body class="bg-gray-100">
-    <div class="container flex flex-col mx-auto h-full min-h-screen bg-white shadow rounded-sm p-6">
+    <div class="container flex flex-col mx-auto h-full min-h-screen bg-white shadow rounded-sm md:p-6 p-1">
       {{- partial "header.html" . -}}
       <main id="main" class="flex-grow">
         {{- block "main" . -}}{{end}}
