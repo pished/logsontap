@@ -12,4 +12,5 @@ author: ""
 
 <!--more-->
 
-*half-open range*: Consists of the first element while excluding the last. Common amongst many languages.
+*half-open range* {#half-open-range}
+: Consists of the first element while excluding the last. Common amongst many languages.
