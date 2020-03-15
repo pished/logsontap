@@ -12,5 +12,11 @@ author: ""
 
 <!--more-->
 
-*half-open range* {#half-open-range}
+###### *half-open range*
 : Consists of the first element while excluding the last. Common amongst many languages.
+
+*Garbage collection*
+: who knows
+
+*Memory Safety*
+: no clue
