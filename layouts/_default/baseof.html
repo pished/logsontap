@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="h-full" lang="en">
   {{- partial "head.html" . -}}
-  <body class="bg-gray-100">
-    <div class="container flex flex-col mx-auto h-full min-h-screen bg-white shadow rounded-sm md:p-6 p-1">
+  <body>
+    <div id="content-wrapper">
       {{- partial "header.html" . -}}
-      <main id="main" class="flex-grow">
+      <main id="main">
         {{- block "main" . -}}{{end}}
       </main>
       {{- partial "footer.html" . -}}

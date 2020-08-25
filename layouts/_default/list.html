@@ -1,8 +1,8 @@
 {{- define "main" -}}
 {{- $paginator := .Paginator -}}
 
-<section class="note-header">
-  <h1>{{- .Title -}}</h1>
+<section class="list-title">
+  <h1 class="note-wrapper">#{{- .Title | lower -}}</h1>
 </section>
 
 {{- if .Content -}}

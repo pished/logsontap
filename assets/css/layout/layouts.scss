@@ -1,0 +1,327 @@
+body {
+  display: block;
+  color: #23292e;
+  background-color: #f3f6f9;
+
+  font-family: averia sans libre;
+  line-height: 1.5;
+
+  word-break: normal;
+  word-wrap: break-word;
+
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+
+  padding-top: constant(safe-area-inset-top);
+  padding-right: constant(safe-area-inset-right);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-right);
+
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-right);
+}
+
+html, body, .content-wrapper {
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+#site-title {
+  font-size: 3rem;
+
+  @media #{$phone} {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+}
+
+#content-wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 1080px; //TODO: this needs to be dynamic
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+  background-color: #fff;
+  border-radius: 0.125rem;
+
+  @media #{$phone} {
+    padding: 0.25rem;
+  }
+}
+
+// HEADER STUFF
+#header {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e2e8f0;
+}
+
+.nav-head {
+  padding: 1.5rem;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title-main {
+  margin-right: 1.5rem; //TODO: dynamic
+  margin-left: 0; //TODO: dynamic
+  flex-shrink: 0;
+  align-items: center;
+
+  @media #{$phone} {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+}
+
+.right-nav {
+  align-items: center; //TODO: dynamic
+  display: flex; //TODO: dynamic??
+  width: auto;
+  flex-grow: 1;
+  justify-content: flex-end; //TODO: dynamic
+  margin-top: 1rem;
+
+  @media #{$phone} {
+    justify-content: center;
+    margin-top: 0;
+  }
+}
+
+.inner-right {
+  font-size: 1.125rem;
+  color: $red;
+  text-align: center;
+
+  .inner-link {
+    margin-right: 1rem;
+    margin-top: 0;
+
+    @media #{$phone} {
+      margin-top: 1rem;
+      margin-right: 0.75rem;
+
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  a {
+    margin-top: 0;
+    display: inline-block;
+    float: right;
+  }
+}
+
+// MAIN BODY STUFF
+.list-title {
+  margin: 0;
+  padding-left: 30px;
+
+  @media #{$phone} {
+    padding-left: 0;
+    h1 {
+      margin: 0;
+    }
+  }
+}
+
+#main {
+  .note-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 30px; //TODO: dynamic??
+
+    @media #{$phone} {
+      padding: 0;
+    }
+  }
+
+  .note-wrapper {
+    padding: 0.5rem;
+
+    @media #{$phone} {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .note-linkwrap {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .note-title {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .note-summary {
+    color: $softblack;
+    line-height: 1.625;
+    margin: 0;
+  }
+
+  .note-date {
+    font-size: 0.875rem;
+    color: $softgray;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.note-labels {
+    margin-top: 0.5rem;
+  .note-notebooks {
+    color: $blue;
+    margin-right: 0.75rem;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .note-series {
+    color: $green;
+    margin-right: 0.75rem;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .note-tag {
+    color: $red;
+    margin-right: 0.75rem;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+// FOOTER STUFF
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 0.75rem;
+}
+
+.footer-wrapper {
+  margin-left: auto;
+  color: #2d3748;
+  margin-right: auto;
+
+  .footer-inner {
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+}
+
+// TAGS PAGE
+.tags-wrapper {
+  margin: 2em 0;
+  text-align: center;
+
+  .tags-title {
+    display: inline-block;
+  }
+
+  .terms-tags {
+    margin: 10px 0;
+
+    .tags-link {
+      display: inline-block;
+      position: relative;
+      margin: 5px 10px;
+      word-wrap: break-word;
+      transition-duration: 0.2s;
+      transition-property: transform;
+      transition-timing-function: ease-out;
+
+      &:hover {
+        color: $red;
+        transform: scale(1.1);
+      }
+
+      .tags-count {
+        display: inline-block;
+        position: relative;
+        top: -8px;
+        right: -2px;
+        color: $red;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// COLLECTIONS PAGE
+#collections {
+  .archive-year {
+    margin: 15px 0;
+    line-height: 2;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .archive-post {
+    padding: 3px 20px;
+    border-left: 1px solid $softgray;
+
+    &:hover {
+      border-left: 2px solid $red;
+      transition: 0.2s ease-out;
+      transform: translateX(4px);
+    }
+
+    .archive-post-time {
+      color: $softgray;
+      margin-right: 10px;
+    }
+  }
+
+  .archive-post-link {
+    color: $red;
+  }
+}
+
+// HELPERS
+.phone-buffer-wrapper {
+  padding: 0 0.5rem;
+}
+
+.full-height {
+  height: 100%
+}

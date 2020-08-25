@@ -1,0 +1,19 @@
+//
+// Define variables to be used throughout the entire scss structure
+//
+
+$totalblack:      #000;
+$softblack:       #4a5568;
+$softgray:        #718096;
+
+$red:             #c41a16;
+$green:           #005c00;
+$blue:            #0b4f79;
+
+//
+// Screen Size Media Queries
+//
+
+$phone: "(min-width: 300px) and (max-width: 767px)";
+$tablet: "(min-width: 768px) and (max-width: 1023)";
+$desktop: "(min-width: 1024px)";
