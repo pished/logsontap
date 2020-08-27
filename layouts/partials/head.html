@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css?family=Averia+Sans+Libre:400,400i,700,700i|Fira+Code&display=swap" rel="stylesheet">
 
 {{ if .Site.IsServer }}
-    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/dev/postcss.config.js") }}
+    {{ $style := resources.Get "css/main.scss" | resources.ToCSS }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 {{ else }}
-    {{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify | fingerprint }}
+    {{ $style := resources.Get "css/main.scss" | resources.ToCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 {{ end }}

@@ -1,8 +1,15 @@
 {{- define "main" -}}
 {{- $paginator := .Paginator -}}
 
-<section class="note-header">
-  <h1>{{- .Title -}}</h1>
+<section class="list-title">
+  {{ $name := .Data.Plural -}}
+  {{ if eq $name "notebooks" -}}
+  <h1 class="note-wrapper notebook-blue">#{{- .Title | lower -}}</h1>
+  {{ else if eq $name "series" -}}
+  <h1 class="note-wrapper series-green">#{{- .Title | lower -}}</h1>
+  {{ else if eq $name "tags" -}}
+  <h1 class="note-wrapper tag-red">#{{- .Title | lower -}}</h1>
+  {{- end }}
 </section>
 
 {{- if .Content -}}

@@ -2,13 +2,13 @@
 
 {{- define "main" }}
 {{- $paginator := .Paginate .Data.Pages.ByLastmod.Reverse 10 }}
-<section id="archive" class="archive">
+<section id="collections" class="phone-buffer-wrapper">
   {{- if and (not $paginator.HasPrev) false }}
   <h2>
     Last Updated
   </h2>
-    <div class="archive-title">
-      <span class="archive-post-counter">
+    <div class="collection-title">
+      <span class="collection-post-counter">
         {{ T "archiveCounter" (len .Data.Pages) }}
       </span>
     </div>
@@ -18,14 +18,14 @@
     {{- $thisYear := $element.Date.Format "2006" }}
     {{- $lastElement := $index | add -1 | index $paginator.Pages }}
     {{- if or (eq $index 0) ( ne ($lastElement.Date.Format "2006") $thisYear ) }}
-      <div class="collection-title">
+      <div class="grouping-title">
         <h2 class="archive-year">{{ $thisYear }}</h2>
       </div>
     {{- end }}
 
     <div class="archive-post">
       <span class="archive-post-time">
-        {{ $element.Date.Format "01-02" }}
+        {{ $element.Date.Format "Jan 2" }}
       </span>
       <span class="archive-post-title">
         <a href="{{ $element.RelPermalink }}" class="archive-post-link">
