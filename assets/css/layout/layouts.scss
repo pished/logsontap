@@ -317,6 +317,124 @@ footer {
   }
 }
 
+// MARKDOWN CSS
+.blogpost-wrap {
+  padding-left: 30px;
+
+  @media #{$phone} {
+    padding: 0 1rem;
+  }
+
+  .article-title {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+  .article-date {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 85%;
+    color: $softgray;
+  }
+}
+.markdown-parse {
+  code, tt, kbd, samp {
+    font-family: fira code,Menlo,Consolas,liberation mono,monospace;
+    color: $red;
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: #f9f6f6;
+    border-radius: 3px;
+  }
+  strong, b {
+    font-weight: 600;
+  }
+  blockquote {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: $softblack;
+    padding: 0 1em;
+    border-left: .25em solid $softgray;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    thead {
+      color: $blue;
+    }
+    tr {
+      border: 0;
+      &:nth-child(even) {
+        background-color: #f3f3f3;
+      }
+    }
+    th, td {
+      min-width: 60px;
+      padding: 6px 13px;
+      border: 1px solid #e6e6e6;
+    }
+  }
+  pre {
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 16px;
+    border-radius: 3px;
+    tab-size: 4;
+    overflow: auto;
+    font-size: 85%;
+    code, kbd, tt, samp {
+      display: inline;
+      font-size: inherit;
+      color: inherit;
+      padding: 0;
+      border-radius: 0;
+      background-color: transparent;
+    }
+  }
+  pre, .chroma {
+    background-color: #f6f8fa !important;
+  }
+  ol, ul {
+    margin-bottom: 20px;
+    margin-block-end: 20px;
+    -webkit-margin-after: 20px;
+    -webkit-padding-start: 40px;
+    padding-left: 40px;
+  }
+  li {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  abbr, acronym {
+    cursor: help;
+  }
+  mark {
+    padding-left: .15em;
+    padding-right: .15em;
+    border-radius: 3px;
+    background-color: rgba(12,242,143,.2);
+    color: currentColor;
+  }
+  a {
+    color: $blue;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 // HELPERS
 .phone-buffer-wrapper {
   padding: 0 0.5rem;
@@ -324,4 +442,24 @@ footer {
 
 .full-height {
   height: 100%
+}
+
+.notebook-blue {
+  color: $blue;
+}
+
+.series-green {
+  color: $green;
+}
+
+.tag-red {
+  color: $red;
+}
+
+.padding-wrap {
+  padding-left: 30px;
+
+  @media #{$phone} {
+    padding: 0 1rem;
+  }
 }

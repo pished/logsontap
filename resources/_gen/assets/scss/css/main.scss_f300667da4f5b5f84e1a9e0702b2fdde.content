@@ -534,8 +534,125 @@ footer {
 #collections .archive-post-link {
   color: #c41a16; }
 
+.blogpost-wrap {
+  padding-left: 30px; }
+  @media (min-width: 300px) and (max-width: 767px) {
+    .blogpost-wrap {
+      padding: 0 1rem; } }
+  .blogpost-wrap .article-title {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px; }
+  .blogpost-wrap .article-date {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 85%;
+    color: #718096; }
+
+.markdown-parse code, .markdown-parse tt, .markdown-parse kbd, .markdown-parse samp {
+  font-family: fira code,Menlo,Consolas,liberation mono,monospace;
+  color: #c41a16;
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: #f9f6f6;
+  border-radius: 3px; }
+
+.markdown-parse strong, .markdown-parse b {
+  font-weight: 600; }
+
+.markdown-parse blockquote {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #4a5568;
+  padding: 0 1em;
+  border-left: 0.25em solid #718096; }
+
+.markdown-parse blockquote, .markdown-parse q {
+  quotes: none; }
+
+.markdown-parse table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse; }
+  .markdown-parse table thead {
+    color: #0b4f79; }
+  .markdown-parse table tr {
+    border: 0; }
+    .markdown-parse table tr:nth-child(even) {
+      background-color: #f3f3f3; }
+  .markdown-parse table th, .markdown-parse table td {
+    min-width: 60px;
+    padding: 6px 13px;
+    border: 1px solid #e6e6e6; }
+
+.markdown-parse pre {
+  display: block;
+  text-align: left;
+  margin: 0;
+  padding: 16px;
+  border-radius: 3px;
+  tab-size: 4;
+  overflow: auto;
+  font-size: 85%; }
+  .markdown-parse pre code, .markdown-parse pre kbd, .markdown-parse pre tt, .markdown-parse pre samp {
+    display: inline;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent; }
+
+.markdown-parse pre, .markdown-parse .chroma {
+  background-color: #f6f8fa !important; }
+
+.markdown-parse ol, .markdown-parse ul {
+  margin-bottom: 20px;
+  margin-block-end: 20px;
+  -webkit-margin-after: 20px;
+  -webkit-padding-start: 40px;
+  padding-left: 40px; }
+
+.markdown-parse li:first-child {
+  margin-top: 0; }
+
+.markdown-parse li:last-child {
+  margin-bottom: 0; }
+
+.markdown-parse abbr, .markdown-parse acronym {
+  cursor: help; }
+
+.markdown-parse mark {
+  padding-left: .15em;
+  padding-right: .15em;
+  border-radius: 3px;
+  background-color: rgba(12, 242, 143, 0.2);
+  color: currentColor; }
+
+.markdown-parse a {
+  color: #0b4f79; }
+  .markdown-parse a:hover {
+    text-decoration: underline; }
+
 .phone-buffer-wrapper {
   padding: 0 0.5rem; }
 
 .full-height {
   height: 100%; }
+
+.notebook-blue {
+  color: #0b4f79; }
+
+.series-green {
+  color: #005c00; }
+
+.tag-red {
+  color: #c41a16; }
+
+.padding-wrap {
+  padding-left: 30px; }
+  @media (min-width: 300px) and (max-width: 767px) {
+    .padding-wrap {
+      padding: 0 1rem; } }
