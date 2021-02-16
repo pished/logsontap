@@ -157,46 +157,51 @@ func main() {
 
 ## Customizing Requests
 
+Sometimes, we will need to extend the basic http client and add on extra attributes to it. These can include timeout durations or if we need to handle a redirect policy. In addition, if our request needs to be more curated we can specify custom headers and authentication.
+
 ```go
 import (
-	"net/url"
-	"net/http"
+	"bytes"
+	"encoding/json"
 	"fmt"
-	"log"
 	"io/ioutil"
-	"strings"
+	"log"
+	"net/http"
+	"time"
 )
 
 func main() {
-	reqBody := map[string]string{"book": "The Way of Kings", "author": "Brandon Sanderson"}
-    payload, err := json.Marshal(values)
-
-	// create a request object
-	req := &http.Request {
-		Method: "POST",
-		URL: "http://dummy.restapiexample.com/api/v1/create",
-		Header: map[string][]string {
-			"Content-Type": { "application/json; charset=UTF-8" },
-		},
-		Body: reqBody,
-	}
-	
-	// send an HTTP request using `req` object
-	res, err := http.DefaultClient.Do( req )
-
-	// check for response error
+	values := map[string]interface{}{"book": "The Way of Kings", "author": "Brandon Sanderson"}
+	payload, err := json.Marshal(values)
 	if err != nil {
-		log.Fatal( "Error:", err )
+		log.Fatal("Error:", err)
 	}
 
-	// read response body
-	data, _ := ioutil.ReadAll( res.Body )
+	client := http.Client{
+		Timeout: 10 * time.Second,
+	}
 
-	// close response body
-	res.Body.Close()
+	// create new request - note it doesn't send yet!
+	req, err := http.NewRequest("POST", "https://httpbin.org/post", bytes.NewBuffer(payload))
+	if err != nil {
+		log.Fatal("Error:", err)
+	}
+	req.Header.Set("Content-Type", "application/json")
+
+	// send our created HTTP request with our custom client
+	res, err := client.Do(req)
+	if err != nil {
+		log.Fatal("Error:", err)
+	}
+
+	defer res.Body.Close()
+
+	data, _ := ioutil.ReadAll(res.Body)
 
 	// print response status and body
-	fmt.Printf( "status: %d\n", res.StatusCode )
-	fmt.Printf( "body: %s\n", data )
+	fmt.Printf("status: %d\n", res.StatusCode)
+	fmt.Printf("body: %s\n", data)
 }
 ```
+
+In the above example there were two distinct differences between a generic POST request. We modified an http.Client in addition to creating a custom request. Should we have not needed to modify any of the properties on http.Client, then we can use the http.DefaultClient (which is just a pointer to a blank http.Client)
